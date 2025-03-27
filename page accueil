@@ -1,0 +1,42 @@
+<?php
+session_start();
+if (isset($_SESSION['user_role'])) {
+    // Redirige les utilisateurs connectés vers leur dashboard
+    header("Location: visualisation/dashboard.php");
+    exit();
+}
+?>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Accueil - Plateforme Intelligente</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Ma Ville Intelligente</h1>
+        <nav>
+            <a href="index.php">Accueil</a>
+            <a href="#apropos">À propos</a>
+            <a href="auth/login.php">Se connecter</a>
+            <a href="auth/register.php">S’inscrire</a>
+        </nav>
+    </header>
+
+    <section>
+        <h2>Bienvenue sur la plateforme intelligente !</h2>
+        <p>Découvrez les services connectés pour rendre votre quotidien plus simple, dans une ville ou un bâtiment intelligent.</p>
+        <img src="assets/images/smartcity.jpg" alt="Ville connectée" width="600">
+    </section>
+
+    <section>
+        <a href="information/free_tour.php" class="btn">Découvrir la plateforme</a>
+        <a href="information/search.php" class="btn">Rechercher des informations</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 - Projet Développement Web - ING1</p>
+    </footer>
+</body>
+</html>
